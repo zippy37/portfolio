@@ -1,0 +1,242 @@
+/* Variables */
+
+:root {
+    --bg-light: rgb(240,240,250);
+    --bg-darker: rgb(100,80,110);
+    --bg-darkest: rgb(50, 40, 70);
+    --bg-purple: rgb(30,20,50);
+  }
+  
+  /* General CSS */
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--bg-light);
+  }
+  
+  /* Nav */ 
+  
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-darkest);
+    z-index: 1;
+    box-shadow: 0 2px 0 black;
+  }
+  
+  .nav-list {
+    display: flex;
+    padding: 15px;
+    list-style: none;
+  }
+  
+  .nav-list a {
+    display: block;
+    font-size: 1rem;
+    margin: -1.25rem 0 -1rem 0;
+    font-family: Roboto;
+  }
+  
+  @media (max-width: 500px) {
+    .nav {
+      justify-content: center;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    padding: 1.25rem 1.25rem 1rem 1.25rem;
+    color: white;
+  }
+  
+  .nav-list a:hover {
+    background: var(--bg-darker);
+  }
+  
+  /* Welcome Section */
+  
+  .welcome-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(black 0, black, var(--bg-darkest) 25%, var(--bg-darkest) 25%, var(--bg-purple) 35%, black 45%, black 55%, var(--bg-purple) 65%, var(--bg-darkest) 75%, var(--bg-darkest) 75%, black, black 100%)
+  }
+  
+  .welcome-section > h1 {
+    color: white;
+    margin: 1.2rem auto 1rem auto;
+    font-family: Roboto;
+    font-size: 4rem;
+  }
+  
+  .welcome-section > p {
+    color: rgb(220, 210, 220);
+    margin: 1rem auto;
+    font-family: Verdana;
+    font-style: italic;
+  }
+  
+  /* Projects Section */
+  
+  .projects-section {
+    background-color: var(--bg-darker);
+    padding: 0.01rem;
+  }
+  
+  .projects-section-header {
+    margin: 3rem 2rem 3rem 2rem;
+    font-family: Verdana;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--bg-purple);
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  
+  .project-grid > a {
+    padding: 3rem;
+  }
+  
+  .project-grid > a:hover {
+    background-color: var(--bg-purple);
+     transition-duration: 0.5s;
+     border: 0.5rem double var(--bg-light);
+  }
+  
+  .project-image {
+    height: calc(100% - 1rem);
+    width: 100%;
+    object-fit: cover;
+    border: 0.5rem double black;
+  }
+  
+  .project-title {
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto 40px auto;
+    padding-bottom: 3rem;
+    width: 300px;
+    height: 10vh;
+    color: white;
+    border-radius: 0.5rem;
+  }
+  
+  .button-github {
+    font-size: 1.5rem;
+    font-family: Verdana;
+    vertical-align: top;
+    background: var(--bg-purple);
+    transition: background 0.3s ease-out;
+  }
+  
+  .button-github:hover {
+    font-size: 1.2rem;
+    border: 5px double white;
+    padding-bottom: 2.5rem;
+    transition: 1s;
+  }
+  
+  .button-github:hover > i {
+    color: white;
+    transition: 1s;
+  }
+  
+  .button-github > i {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: var(--bg-purple);
+  }
+  
+  /* Contacts Section */
+  
+  .contact-section {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 93vh;
+  }
+  
+  .contact-section > h2 {
+    font-family: Verdana;
+    color: white;
+    font-size: 2rem;
+  }
+  
+  .contact-links {
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .contact-details {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+  }
+  
+  .contact-details:hover {
+    font-size: 2rem;
+    transition: 0.5s;
+    transform: translateY(8px);
+  }
+  
+  footer {
+    font-family: Verdana;
+    font-size: 0.8rem;
+    color: white;
+    background: var(--bg-purple);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+    border-top: 4px solid var(--bg-darker);
+  }
+  
